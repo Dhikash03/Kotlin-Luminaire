@@ -1,4 +1,5 @@
-class AmpouleIncandescente: Eclairage {
+open class  Ampoule : Eclairage {
+
     /**
      * etat de la lampe : 0 éteinte, 10 allumée pleine intensité
      */
@@ -70,5 +71,9 @@ class AmpouleIncandescente: Eclairage {
     override fun toString(): String {
         return this.javaClass.name + " : " + this.etat
     }
-}
 
+
+
+
+
+}

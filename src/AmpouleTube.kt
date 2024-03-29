@@ -1,4 +1,5 @@
-class AmpouleIncandescente: Eclairage {
+class AmpouleTube : Eclairage {
+
     /**
      * etat de la lampe : 0 éteinte, 10 allumée pleine intensité
      */
@@ -16,7 +17,7 @@ class AmpouleIncandescente: Eclairage {
      */
     private fun probaPanne(): Int {
         val alea = (0..100).random() // generated random from 0 to 100 included
-        return if (alea < 10) {
+        return if (alea < 5) {
             -1
         } else 0
     }
@@ -27,7 +28,7 @@ class AmpouleIncandescente: Eclairage {
      */
     override fun allumer() {
         if (this.etat != -1 && this.probaPanne() != -1) {
-            this.etat = 10;
+            this.etat = 0;
         } else {
             this.etat = -1;
         }
@@ -46,9 +47,6 @@ class AmpouleIncandescente: Eclairage {
      * l'ampoule n'est pas en panné et que son intensité est < à 10
      */
     override fun intensifier() {
-        if ( this.etat < 10) {
-            this.etat++;
-        }
     }
     /**
      * Diminuer l'intensité lumineuse de l'ampoule
@@ -70,5 +68,6 @@ class AmpouleIncandescente: Eclairage {
     override fun toString(): String {
         return this.javaClass.name + " : " + this.etat
     }
-}
 
+
+}
